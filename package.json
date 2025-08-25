@@ -11,7 +11,15 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "db:check": "node scripts/check-db.js",
-    "db:health": "curl -s http://localhost:3000/api/health/db | jq ."
+    "db:health": "curl -s http://localhost:3000/api/health/db | jq .",
+    "db:migrate": "node scripts/migrate.js",
+    "db:migrate:status": "node scripts/migrate.js status",
+    "db:seed": "node scripts/seed.js",
+    "db:seed:force": "node scripts/seed.js --force",
+    "db:seed:reset": "node scripts/seed.js --reset",
+    "db:seed:reset:seed": "node scripts/seed.js --reset --seed",
+    "db:seed:summary": "node scripts/seed.js --summary",
+    "db:setup": "npm run db:migrate && npm run db:seed"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.0.2",
